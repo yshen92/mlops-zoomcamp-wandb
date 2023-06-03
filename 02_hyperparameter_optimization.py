@@ -19,7 +19,7 @@ def run_train():
     config = wandb.config
 
     # Fetch the latest version of the dataset artifact 
-    artifact = wandb.use_artifact('geekyrakshit/mlops-zoomcamp-wandb/Titanic:latest', type='dataset')
+    artifact = wandb.use_artifact('yuanshen/mlops-zoomcamp-wandb/Titanic:latest', type='dataset')
     artifact_dir = artifact.download()
 
     # Read the files
@@ -111,4 +111,4 @@ SWEEP_CONFIG = {
 
 if __name__ == "__main__":
     sweep_id = wandb.sweep(SWEEP_CONFIG, project="mlops-zoomcamp-wandb")
-    wandb.agent(sweep_id, run_train, count=5)
+    wandb.agent(sweep_id, run_train, count=10)
